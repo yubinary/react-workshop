@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:100,300,400,500,700,900");
+
+/* general */
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* searchSong page */
+.SearchSong{
+  background-color: rgb(37, 37, 37);
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.header{
+  font-weight: bold;
+  padding: 50px 20px;
+  background: white;
+  color: rgb(37, 37, 37);
+}
+
+.body{
+  padding: 50px 20px;
+  min-height: 500px;
+}
+
+.footer{
+  padding: 50px 20px;
+  background-color: rgb(20, 20, 20);
+  font-size: 14px;
+}
+
+/* searchBar components */
+form{
+  display: flex;
+  padding: 20px 0px;
+  margin-right: 10px;
+}
+
+.form-control{
+  margin: 0px 10px;
+}
+
+.song{
+  display: flex;
+  background-color: rgb(58, 58, 58);
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.song:hover{
+  background-color: rgb(112, 112, 112);
+}
+
+.song img{
+  margin: auto 0px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.song .info{
+  margin: auto 20px;
+}
+
+.song h4, .song p{
+  margin: 3px;
+  font-size: 14px;
+}
+
+.song h4{
+  font-size: 18px;
+}
+
+.empty{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);    
+}

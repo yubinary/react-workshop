@@ -1,38 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export default function SearchBar({ makeUrl }) {
-  const [artistTerm, setArtistTerm] = useState("");
-  const [titleTerm, setTitleTerm] = useState("");
-
-  useEffect(() => {
-    makeUrl("", "");
-  }, []);
-
-  // when form submitted, send get request to API
-  function handleSubmit(event) {
-    // prevent default action of form (ex. refresh the page)
-    event.preventDefault();
-    makeUrl(artistTerm, titleTerm);
-  }
+export default function SearchBar({ handleSubmit, searchTerm, setSearchTerm, setEntityTerm }) {
 
   return (
-    <div className="search">
+    <div>
       <form onSubmit={handleSubmit}>
         <input
-          className="input"
+          className="input form-control"
           type="text"
-          placeholder="Search by artist"
-          value={artistTerm}
-          onChange={(event) => setArtistTerm(event.target.value)}>
+          placeholder="Search for songs"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}>
         </input>
-        <input
-          className="input"
-          type="text"
-          placeholder="Search by title"
-          value={titleTerm}
-          onChange={(event) => setTitleTerm(event.target.value)}>
-        </input>
-        <button>Search</button>
+        <select
+          className="form-control"
+          onChange={(event) => setEntityTerm(event.target.value)}
+        >
+          <option value="musicTrack">music</option>
+          <option value="musicVideo">music video</option>
+          <option value="movie">movie</option>
+          <option value="podcast">podcast</option>
+        </select>
+        <button type="submit" class="btn btn-light">Search</button>
       </form>
     </div>
   )
